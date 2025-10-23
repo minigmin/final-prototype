@@ -1,0 +1,478 @@
+/* =======================================
+   THEME VARIABLES
+   ======================================= */
+:root {
+  --bg: #F9F9F9;
+  --text: #1B202C;
+  --muted: #777;
+  --card: #fff;
+  --accent: #FF5540;
+  --panel: #333;
+  --shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+/* =======================================
+   RESET & BASE
+   ======================================= */
+* {
+  box-sizing: border-box;
+  font-family: Pretendard, system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =======================================
+   LAYOUT STRUCTURE
+   ======================================= */
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+/* ---------------------------------------
+   LEFT NAVIGATION PANEL
+   --------------------------------------- */
+.nav {
+  background: var(--panel);
+  color: #D9D9D9;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding: 24px 20px;
+}
+
+.nav__brand {
+  width: 80px;
+  height: 30px;
+  background-image: url(image/MOTI.png);
+  background-size: cover;
+  background-position: top left;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav__menu a {
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #D9D9D9;
+}
+
+.nav__menu a.active,
+.nav__menu a:hover {
+  color: #fff;
+}
+
+.nav__meta {
+  margin-top: auto;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ---------------------------------------
+   MAIN SECTION
+   --------------------------------------- */
+.main {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.pageTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  color: #1B202C;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* =======================================
+   CAMERA AREA
+   ======================================= */
+.camBox {
+  width: 390px;
+  height: 600px;
+  background: #1B202C;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+#webcam {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.lockedMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+  background: #1B202C;
+}
+
+.lockedMedia.show {
+  display: block;
+}
+
+.lockedMedia video,
+.lockedMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bigStart {
+  margin-top: 20px;
+  width: 390px;
+  height: 60px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255, 85, 64, .35);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bigStart:active {
+  transform: translateY(1px);
+}
+
+/* =======================================
+   INFO + MISSION + FEEDBACK SECTION
+   ======================================= */
+.info {
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: 680px;
+}
+
+/* ---------- INFO TEXT ---------- */
+.info__block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.blTitle {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: #1B202C;
+}
+
+.blDesc {
+  margin: 0;
+  color: #777777;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* ---------- MISSION BOX ---------- */
+.missionBox {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px 20px;
+}
+
+.missionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1B202C;
+}
+
+.missionList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #1B202C;
+}
+
+.missionList .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.missionList img {
+  width: 28px;
+  height: 28px;
+  background-position: center;
+  background-size: cover;
+}
+
+.missionList .divider {
+  height: 0;
+  border-top: 1px solid #ededed;
+}
+
+/* =======================================
+   FEEDBACK CARD (GUESTBOOK)
+   ======================================= */
+.feedbackCard {
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 416px;                /* 카드 고정 높이 */
+  min-height: 280px;
+  overflow: hidden;             /* 카드 밖으로 넘침 방지 */
+}
+
+/* ---------- FORM SECTION ---------- */
+.fbForm {
+  background: #ededed;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.fbTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fdInputRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 150px;
+}
+
+.lbl {
+  color: #555;
+  font-weight: 600;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.lineInput {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #bbb;
+  padding: 2px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #777;
+  width: 100%;
+  min-width: 80px;
+}
+
+.lineInput::placeholder {
+  color: #999999;
+  font-weight: 400;
+}
+
+.save {
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fbTextarea {
+  width: 100%;
+  resize: none;
+  border: 0;
+  outline: 0;
+  margin-top: 0px;
+  height: 80px;
+  background: transparent;
+  color: #777;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ---------- FEEDBACK LIST (SCROLLABLE) ---------- */
+.fbList {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 auto;         /* 남는 공간 모두 사용 */
+  min-height: 0;          /* flex 컨테이너에서 스크롤 가능하게 */
+  overflow-y: auto;       /* 리스트만 스크롤 */
+  padding-right: 8px;     /* 스크롤바 여백 */
+  
+  /* Safari 렌더링 안정화(옵션) */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* ===== Scrollbar Custom ===== */
+
+/* 스크롤바 전체 영역 */
+.fbList::-webkit-scrollbar {
+  width: 12px;              /* 세로 스크롤바 너비 */
+}
+
+/* 스크롤바 트랙 (배경) */
+.fbList::-webkit-scrollbar-track {
+  background: #f0f0f0;     /* 트랙 배경색 */
+  border-radius: 10px;     /* 둥근 모서리 */
+}
+
+/* 스크롤바 손잡이(thumb) */
+.fbList::-webkit-scrollbar-thumb {
+  background-color: #acacac; /* 손잡이 색 */
+  border-radius: 10px;       /* 둥근 모서리 */
+  border: 2px solid #f0f0f0; /* 배경과 자연스러운 경계 */
+}
+
+/* 마우스 오버 시 손잡이 강조 */
+.fbList::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+/* ---------- FEEDBACK ITEM ---------- */
+.fbItem {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+  padding-right: 28px;
+}
+
+.fbAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-color: #D9D9D9;
+}
+
+.fbText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.fbRow {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fbName {
+  font-weight: 600;
+  font-size: 18px;
+  color: #1B202C;
+}
+
+.fbOrg {
+  color: #999999;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.fbMsg {
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.fbDivider {
+  width: 95%;                  /* 혹시 모를 수축 방지 */
+  height: 1px;                  /* 정확히 1px */
+  margin: 12px auto; 
+  flex: 0 0 1px;                /* flex-basis를 1px로 고정 */
+  background: #ededed;
+
+  /* 페인트 강제 트릭(옵션) */
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* ---------- DELETE BUTTON ---------- */
+.fbItem .del {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #b0b0b0;
+  font-size: 32px;
+  line-height: 0.3;
+}
+
+.fbItem .del:hover {
+  color: var(--accent);
+}
