@@ -12,8 +12,8 @@ const CLASS_CONFIG = {
     title: "집밥 셰프 되기",
     desc: "시즈닝과 불 조절만 익혀도 요리 레벨업. 한식 → 파스타 → 디저트 순으로 확장!",
     missions: [
-      { text: "주 1회 신메뉴 도전", icon: "icons/cook_1.png" },
-      { text: "레시피 카드 5개 제작", icon: "icons/cook_2.png" }
+      { text: "주 1회 신메뉴 도전", icon: "icons/default_1.png" },
+      { text: "레시피 카드 5개 제작", icon: "icons/default_2.png" }
     ],
     media: "media/cook.mp4"
   },
@@ -21,8 +21,8 @@ const CLASS_CONFIG = {
     title: "올해 12권 읽기",
     desc: "한 달 한 권. 하이라이트 정리와 감상 메모로 기억을 내 것으로!",
     missions: [
-      { text: "월 1권 완독 인증", icon: "icons/reading_1.png" },
-      { text: "인상비평 10편 작성", icon: "icons/reading_2.png" }
+      { text: "월 1권 완독 인증", icon: "icons/default_1.png" },
+      { text: "인상비평 10편 작성", icon: "icons/default_2.png" }
     ],
     media: "media/reading.mp4"
   },
@@ -30,8 +30,8 @@ const CLASS_CONFIG = {
     title: "로컬 여행 마스터",
     desc: "골목·시장·박물관·산책루트까지 로컬 기록하기.",
     missions: [
-      { text: "로컬 맛집 지도 만들기", icon: "icons/travel_1.png" },
-      { text: "여행 브이로그 3분", icon: "icons/travel_2.png" }
+      { text: "로컬 맛집 지도 만들기", icon: "icons/default_1.png" },
+      { text: "여행 브이로그 3분", icon: "icons/default_2.png" }
     ],
     media: "media/travel.mp4"
   },
@@ -39,8 +39,8 @@ const CLASS_CONFIG = {
     title: "나만의 플레이리스트",
     desc: "주 2곡 선정 후 3줄 감상평. 장르 하나 깊게 파보기.",
     missions: [
-      { text: "월간 플레이리스트 10곡", icon: "icons/music_1.png" },
-      { text: "라이브 공연 1회", icon: "icons/music_2.png" }
+      { text: "월간 플레이리스트 10곡", icon: "icons/default_1.png" },
+      { text: "라이브 공연 1회", icon: "icons/default_2.png" }
     ],
     media: "media/music.mp4"
   },
@@ -48,8 +48,8 @@ const CLASS_CONFIG = {
     title: "체력 한계 갱신",
     desc: "유산소+근력 30분 콤보. 꾸준함이 핵심!",
     missions: [
-      { text: "주 3회 30분 운동", icon: "icons/sports_1.png" },
-      { text: "퍼스널 베스트 갱신", icon: "icons/sports_2.png" }
+      { text: "주 3회 30분 운동", icon: "icons/default_1.png" },
+      { text: "퍼스널 베스트 갱신", icon: "icons/default_2.png" }
     ],
     media: "media/sports.mp4"
   },
